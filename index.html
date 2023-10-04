@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css">
+    <title>AajKaMohorat</title>
+</head>
+<body>
+
+    <div id="navbar">
+        <div  class="part1 btn">
+           <div>|||</div>
+        </div>
+        <div  class="part2">Aaj Ka Muhurat</div>
+        <div  class="part3">
+            
+            <div  class="">About Us</div>
+            <div  class="">English</div>
+        </div>
+    </div>
+
+    <div id="nd2"><div> </div></div>
+
+    <div id="nd3">
+        <div>Date</div>
+        <div>Time</div>
+    </div>
+
+
+    <div id="nd4">
+        <div>I Live in ______________<input type="text" class="custom-input" value="India"></div>
+
+    </div>
+
+    <div id="nd5">
+        <div>Filal Chal raha hai</div>
+        
+        <div>Aaj ka Sabse Uttam Mahurat : </div>
+    </div>
+<br><br>
+    <div> Scroll Down</div>
+
+    <label for="cityInput">Enter your city:</label>
+    <input type="text" id="cityInput" oninput="getSuggestions()">
+
+    <div id="suggestions"></div>
+
+    <script>
+        function getSuggestions() {
+            const input = document.getElementById("cityInput").value.toLowerCase();
+
+            // Use AJAX to fetch suggestions from the server
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    const suggestionsDiv = document.getElementById("suggestions");
+                    suggestionsDiv.innerHTML = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "php.php?q=" + input, true);
+            xhr.send();
+        }
+    </script>
+
+    <script src="../Backend/index.js"></script>
+
+</body>
+</html>
