@@ -1,70 +1,171 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="index.css">
-    <title>AajKaMohorat</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <script src="scripts/location.js"></script>
+    <script src="scripts/suncalc.js"></script>
+    <script src="scripts/muhurat.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link rel="stylesheet" href="style/skeleton.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="style/def.css">
+    <link rel="stylesheet" href="style/newmon.css">
+    <link rel="icon" href="images/logo.png" type="images/x-icon" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <title>Home &#8211; Aaj Ka Muhurat</title>
+    <link rel="canonical" href="https://aajkamuhurat.github.io/" />
+
 </head>
+
 <body>
 
-    <div id="navbar">
-        <div  class="part1 btn">
-           <div>|||</div>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="three columns">
+                    <a class="logo-full" href="index.html">
+                        <img src="images/logo.png" alt="Aaj Ka Muhurat" title="Aaj Ka Muhurat" style="width: 180px;"/>
+                    </a>
+                    <a class="logo-small" href="index.html">
+                        <img src="images/logo.png" alt="Aaj Ka Muhurat" title="Aaj Ka Muhurat" />
+                    </a>
+                </div><!-- logo //-->
+
+                <nav class="nine columns nav inv">
+                    <a href="" id="burger">☰</a>
+                    <div class="menu-menu-1-container">
+                        <ul id="main" class="menu">
+                            <li id="menu-item-16216" class="current-menu-item"><a href="index.html" aria-current="page">Home</a></li>
+                            <li id="menu-item-15496" class=""><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+
+            </div>
         </div>
-        <div  class="part2">Aaj Ka Muhurat</div>
-        <div  class="part3">
-            
-            <div  class="">About Us</div>
-            <div  class="">English</div>
-        </div>
-    </div>
+    </header><!-- header //-->
 
-    <div id="nd2"><div> </div></div>
+    <div class="container">
+        <div id="wrap">
+            <div id="main">
+                <div id="homepage">
+                    <section class="row intro">
+                        <div class="seven columns">
+                            <h1 class="large" ><p id="currmu">Amrit</p><span id="currmutime">chal raha hai abhi</span></h1>
+                            <p class="subtitle" id="currmumean">Amrit means a time as sweet and nourishing as nectar. It's like an invitation to infuse positivity and unleash your creative spirit.</p>
+                        </div>
+                        <div class="five columns" id="tldwidget">
 
-    <div id="nd3">
-        <div>Date</div>
-        <div>Time</div>
-    </div>
+                            <div id="tld" class="flex flex-y border-1 padding-1 curveborder" style="padding: 5%; font-weight: bold; color: rgb(46, 46, 46);height: 100%; position: relative;" >
+                                <div class="flex flex-x-center flex-grow-1 margin-1">
+                                    <div id="tldateday" class="flex flex-grow-1">Friday</div>
+                                    <div class="flex-grow-1 flex flex-right">
+                                        <div  class="flex pointer" onclick="opendatepicker(this)">
+                                            <div id="currdate">Mar 01 2024</div>
+                                            <div style="margin-left: 5px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 24 24">
+                                                    <path d="M 19.171875 2 C 18.448125 2 17.724375 2.275625 17.171875 2.828125 L 16 4 L 20 8 L 21.171875 6.828125 C 22.275875 5.724125 22.275875 3.933125 21.171875 2.828125 C 20.619375 2.275625 19.895625 2 19.171875 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <input id="tldatedate" type="date" onchange="changedatelm(this)" style=" position: absolute;;z-index: -1; opacity: 0;"   >
+                                    </div>
+                                </div>
+                                <div id="timeld" class="flex flex-x-center flex-grow-2 margin-1" style="font-size: 250%;">06:06:03 AM</div>
+                                <div class="flex flex-grow-1 flex-bottom flex-x-center margin-1">
+                                    <input id="tlocationd" class="flex-grow-1 transparent" style=" font-weight: bold; border-radius: 0;" type="text" placeholder="Enter your Pin Code here">
+                                    <button id="updatelocation" class="transparent" onclick="updatelocation(this)" class="flex-grow-1" type="submit">Search</button>
+                                </div>
+                                <div id="tldloader" style="position: absolute; top: 0; left:0; height: 100%; z-index: -1;"></div>
+                            </div>
 
 
-    <div id="nd4">
-        <div>I Live in ______________<input type="text" class="custom-input" value="India"></div>
+                                
+                                <div id="allmupopup" style="background-color: white; display: none; z-index: 1;" class="flex flex-y fixed center  padding-1 curveborder">
 
-    </div>
+                                    <div class="flex">
+                                        <div id="lisofdes" style="display: inline; margin: 5px;"></div>
+                                        <button onclick="document.querySelector('#allmupopup').style.display = 'none';">x</button>
+                                    </div>
+                                    <table id="listallmuhurat" class="padding-1" ></table>
 
-    <div id="nd5">
-        <div>Filal Chal raha hai</div>
-        
-        <div>Aaj ka Sabse Uttam Mahurat : </div>
-    </div>
-<br><br>
-    <div> Scroll Down</div>
+                                </div>
+                                
 
-    <label for="cityInput">Enter your city:</label>
-    <input type="text" id="cityInput" oninput="getSuggestions()">
 
-    <div id="suggestions"></div>
+                        </div>
+                        
+                    </section>
 
+                    <section class="intro-icons">
+                        <h2>Aane Vale Muhurat</h2>
+                        <div class="row">
+                            <div class="three columns upcomu">
+                                <div class="item"  style="background-color: #77B4F2">
+                                    <span><img src="" /></span>
+                                    <strong>Char</strong>
+                                </div>
+                            </div>
+                            <div class="three columns upcomu">
+                                <div class="item"  style="background-color: #F0B32A">
+                                    <span><img src="" /></span>
+                                    <strong>Kaal</strong>
+                                </div>
+                            </div>
+                            <div class="three columns upcomu">
+                                <div class="item" style="background-color: #B6ADF4">
+                                    <span><img src="" /></span>
+                                    <strong>Amrit</strong>
+                                </div>
+                            </div>
+                            <div class="three columns upcomu">
+                                <div class="item"  style="background-color: #A5CC65">
+                                    <span><img src="" /></span>
+                                    <strong>Shubh</strong>
+                                </div>
+                            </div>
+                            <div class="three columns upcomu">
+                                <div class="item"  style="background-color: #F2C8CA">
+                                    <span><img src="" /></span>
+                                    <strong>Udved</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-grow-1 flex-right margin-1 pointer" style="color: #1c8bfa;" onclick="changedatelm(this)">View All</div>
+                    </section>
+
+
+                </div>
+
+                <div class="clear"> </div>
+
+            </div><!-- main //-->
+        </div><!-- wrap //-->
+
+    </div><!-- container //-->
+
+    <script src="scripts/update.js"></script>
+    <script src="scripts/widget.js"></script>
+    
     <script>
-        function getSuggestions() {
-            const input = document.getElementById("cityInput").value.toLowerCase();
 
-            // Use AJAX to fetch suggestions from the server
-            const xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    const suggestionsDiv = document.getElementById("suggestions");
-                    suggestionsDiv.innerHTML = xhr.responseText;
-                }
+        (() => {
+            document.querySelector("#burger").onclick = (e) => {
+                e.preventDefault();
+                const el = document.querySelector("#header .menu");
+                el.style.display = el.style.display == "block" ? "none" : "block";
             };
-            xhr.open("GET", "php.php?q=" + input, true);
-            xhr.send();
-        }
+        })();
+
     </script>
 
-    <script src="../Backend/index.js"></script>
-
 </body>
+
 </html>

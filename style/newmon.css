@@ -1,0 +1,30 @@
+.tlocationd::placeholder{
+    color: #e26d6d;
+    color: #67eba9;
+}
+
+
+#allmupopup{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width:max-content;
+}
+
+
+
+#currdatedit:hover{
+    cursor: pointer;
+
+}
+
+
+td, th{
+    text-align: justify;
+
+    font-family: monospace;
+
+}
+
+th{
+    margin: 1%;
+    width: 33%;
+}
