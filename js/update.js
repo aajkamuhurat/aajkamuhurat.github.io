@@ -15,8 +15,11 @@ async function processor(){
         A = await getlatlon("313001")
     }
 
-    mdat = muhurat(new Date(), A[0], A[1])
+    
+    mdat = muhurat(getdashdate(new Date()), A[0], A[1])
     curr = new Date().getTime()
+
+    console.log(mdat[0])
 
     alinm = []
 

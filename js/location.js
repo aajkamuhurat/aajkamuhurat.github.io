@@ -24,3 +24,14 @@ async function getlatlon(d, t=0){
     return await ll
 
 }
+
+function getdashdate(date){
+
+    var now = new Date(date);
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var year = now.getFullYear()
+    
+    return `${year}-${month}-${day}`
+    
+}

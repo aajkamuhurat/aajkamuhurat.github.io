@@ -9,16 +9,7 @@ var tldloader = document.querySelector("#tldloader")
 
 
 
-function getdashdate(date){
 
-    var now = new Date(date);
-    var day = ("0" + now.getDate()).slice(-2);
-    var month = ("0" + (now.getMonth() + 1)).slice(-2);
-    var year = now.getFullYear()
-    
-    return `${year}-${month}-${day}`
-    
-}
 
 var today = new Date()
 strt = new Date(alinm[0][1]).getTime()
